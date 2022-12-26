@@ -1,0 +1,24 @@
+{% extends 'blog/layout.html' %}
+{% block title %}
+    Register
+{% endblock title %}
+{% block body %}
+    <h1>Register for BlogHub</h1>
+    <div class="content-section">
+        <form action="{% url 'users:users-register' %}" method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb4">Register</legend>
+                {{form.as_p}}
+            </fieldset>
+            <div class="form-group">
+                <button type="submit">SignUp</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already have an account? <a href="" class="ml-2">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock body %}
