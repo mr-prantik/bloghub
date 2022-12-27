@@ -4,7 +4,7 @@
 {% endblock title %}
 {% block body %}
     <h1>Register for BlogHub</h1>
-    <div class="content-section">
+    <div class="content-section" id="register">
         <form action="{% url 'users:users-register' %}" method="post">
             {% csrf_token %}
             <fieldset class="form-group">
