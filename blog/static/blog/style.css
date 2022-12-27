@@ -1,13 +1,18 @@
 body {
-    background: #fafafa;
-    color: #333333;
+    background-color: #2e2e2e;
+    color: #277a00;
     margin-top: 5rem;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #006912;
   }
   
+#register{
+  color: rgb(255, 253, 253);
+  background-color: rgb(68, 68, 68);
+}
+
   ul {
     margin: 0;
   }
@@ -37,11 +42,11 @@ body {
   }
   
   .article-title {
-    color: #444444;
+    color: #007209;
   }
   
   a.article-title:hover {
-    color: #428bca;
+    color: #34a500;
     text-decoration: none;
   }
   
@@ -62,7 +67,7 @@ body {
   }
   
   .article-metadata a:hover {
-    color: #333;
+    color: rgb(121, 0, 0);
     text-decoration: none;
   }
   
