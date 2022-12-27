@@ -17,13 +17,18 @@ pip install -r requirements.txt
 
 make the required migrations
 ```
-python3 manage.py makemigrations
+python manage.py makemigrations
 ```
 ```
-python3 manage.py migrate
+python manage.py migrate
+```
+
+in case of OperationalError
+```
+python manage.py migrate --run-syncdb
 ```
 
 run the server
 ```
-python3 manage.py runserver
+python manage.py runserver
 ```
