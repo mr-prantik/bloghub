@@ -1,14 +1,7 @@
 # bloghub
 write some blogs
 
-clone the repository
-```
-git clone git@github.com:DGclasher/bloghub.git
-```
-change to the bloghub directory
-```
-cd bloghub/
-```
+django application to write blogs
 
 install the requirements
 ```
@@ -22,8 +15,6 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
-
-in case of OperationalError
 ```
 python manage.py migrate --run-syncdb
 ```
