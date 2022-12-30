@@ -1,11 +1,11 @@
 body {
-    background-color: #ffffff;
-    color: #277a00;
+    background-color: #000000;
+    color: #ffffff;
     margin-top: 5rem;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #006912;
+    color: #ffffff;
   }
   
 #register{
@@ -87,3 +87,4 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+  

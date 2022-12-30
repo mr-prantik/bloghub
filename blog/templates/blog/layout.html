@@ -21,7 +21,6 @@
     <title>bloghub - {% block title %} {% endblock title %}</title>
   </head>
   <body>
-    
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">bloghub</a>
@@ -49,25 +48,38 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'blog:blog-about' %}">About</a>
             </li>
+
+           
+            {% if user.is_authenticated %}
+
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="{% url 'users:users-logout' %}"
+                >Logout</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'users:users-profile' %}"
+                >Profile</a
+              >
+            </li>
+
+            {% else %}
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'users:users-login' %}">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'users:users-register' %}">Register</a>
             </li>
+            {% endif %}
           </ul>
         </div>
       </div>
     </nav>
     <div class="col-md-8">
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-        
-      {% endif %}
+      {% if messages %} {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %} {% endif %}
     </div>
     <div class="container">{% block body %} {% endblock body %}</div>
 
