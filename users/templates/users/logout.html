@@ -1,0 +1,10 @@
+{% extends 'blog/layout.html' %} {% block title %} Register {% endblock title %}
+{% block body %}
+<h2>Logged out</h2>
+<div class="border-top pt-3">
+  <small class="text-muted">
+    <a href="{% url 'users:users-login' %}" >Log in</a>
+  </small>
+</div>
+
+{% endblock body %}
