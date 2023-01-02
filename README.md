@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 make the required migrations
 ```
-python manage.py makemigrations
+python manage.py makemigrations blog users
 ```
 ```
 python manage.py migrate
