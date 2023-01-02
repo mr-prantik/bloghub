@@ -5,6 +5,7 @@ from django.contrib import messages
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from .models import *
+from  blog.models import *
 
 def register(request):
     if request.method == "POST":
@@ -22,12 +23,33 @@ def register(request):
         "form": form
     })
 
+
 @login_required
 def profile(request):
-    # if request.user.is_authenticated:
-    # messages.error(request, f"You need to login first")
-    return render(request, "users/profile.html", {
-        "profile" : Profile.objects.all()
-    })
+    return render(request, "users/profile.html")
     # return HttpResponseRedirect(reverse("users:users-login"))
-    pass
+    
+
+@login_required
+def update_profile(request):
+    if request.method=="POST":
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            return HttpResponseRedirect(reverse("users:users-profile"))
+        else:
+            u_form = UserUpdateForm(instance=request.user)
+            p_form=ProfileUpdateForm(instance=request.user.profile)
+    u_form = UserUpdateForm(instance=request.user)
+    p_form = ProfileUpdateForm(instance=request.user.profile)
+    return render(request, "users/update_profile.html", {
+        "u_form" : u_form,
+        "p_form" : p_form
+    })
+
+def my_posts(request):
+    return render(request, "users/my_posts.html", {
+        "posts" : Post.objects.all()
+    })
