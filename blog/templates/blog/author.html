@@ -3,8 +3,15 @@
     {{author.username}}
 {% endblock title %}
 {% block body %}
-    <h1>{{author.username}}</h1>
-    <h2>{{author.first_name}} {{author.last_name}}</h2>
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading" style="color: black;">{{ user.first_name }} {{user.last_name}}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+    </div>
     {% for post in author.post_set.all %}
         <article class="media content-section">
           <div class="media-body">

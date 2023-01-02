@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.views.generic import ListView
 from .models import *
 
 
@@ -20,3 +21,8 @@ def author(request, author_name):
             "author": author
         })
     pass
+
+# class PostListView(ListView):
+#     model = Post
+#     template_name = 'blog/home.html'
+#     context_object_name = 'posts'
