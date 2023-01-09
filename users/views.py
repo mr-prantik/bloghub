@@ -34,7 +34,7 @@ def profile(request):
 def update_profile(request):
     if request.method=="POST":
         u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = ProfileUpdateForm(request.POST, instance=request.user.profile)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
@@ -49,7 +49,6 @@ def update_profile(request):
         "p_form" : p_form
     })
 
+@login_required
 def my_posts(request):
-    return render(request, "users/my_posts.html", {
-        "posts" : Post.objects.all()
-    })
+    return render(request, "users/my_posts.html")
