@@ -21,70 +21,77 @@
     <title>bloghub - {% block title %} {% endblock title %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">bloghub</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="{% url 'blog:blog-home' %}"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog:blog-about' %}">About</a>
-            </li>
+    <nav>
+      <label class="logo">BlogHub </label>
+      <ul>
+        <li><a class="active" href="{% url 'blog:blog-home' %}">Home </a></li>
+        <li><a href="{% url 'blog:blog-about' %}">About </a></li>
+        {% if user.is_authenticated %}
 
-            {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'users:users-logout' %}">Logout</a>
+        </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog:post-create' %}">New Post</a>
-            </li>
+        <li>
+          <a href="{% url 'blog:post-create' %}">New Post</a>
+        </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'users:users-logout' %}"
-                >Logout</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'users:users-profile' %}"
-                >Profile</a
-              >
-            </li>
+        <li>
+          <a href="{% url 'users:users-logout' %}">Logout</a>
+        </li>
+        <li>
+          <a href="{% url 'users:users-profile' %}">Profile</a>
+        </li>
 
-            {% else %}
+        {% else %}
 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'users:users-login' %}">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'users:users-register' %}">Register</a>
-            </li>
-            {% endif %}
-          </ul>
+        <li>
+          <a href="{% url 'users:users-login' %}">Sign in</a>
+        </li>
+
+        <li>
+          <a href="{% url 'users:users-register' %}">Sign up</a>
+        </li>
+
+        {% endif %}
+      </ul>
+
+      <label id="icon">
+        <i class="fas fa-bars"></i>
+      </label>
+    </nav>
+
+    <section class="bg-main">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>BlogHub - A new model for publishing</h1>
+          <!--<h7>You always own youe intellectual property, mailing list,and subscriber payments.
+            With full editorial control and no gatekeepers,you can do the work you most believe in.</h7> -->
+          <button type="button">Create your blog now</button>
+        </div>
+
+        <div class="col-lg-6">
+          <img
+            class="title-image"
+            src="/media/hero_image.png"
+            alt=""
+            height="500vh"
+            width="500vw"
+          />
         </div>
       </div>
-    </nav>
-    <div class="col-md-8">
-      {% if messages %} {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-      {% endfor %} {% endif %}
-    </div>
-    <div class="container">{% block body %} {% endblock body %}</div>
+    </section>
+
+    <section class="blog-part">
+      <div class="col-md-8">
+        {% if messages %} {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %} {% endif %}
+      </div>
+      <div class="container">{% block body %} {% endblock body %}</div>
+    </section>
+
+    <section class="footer-part"></section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
