@@ -20,7 +20,7 @@
       <form action="{% url 'users:users-login' %}" method="post">
         {% csrf_token %}
         <fieldset class="form-group">
-          <legend class="border-bottom mb4">Login</legend>
+          <legend class="border-bottom mb4">Login to your account</legend>
           {{ form|crispy }}
         </fieldset>
         <div class="form-group">
