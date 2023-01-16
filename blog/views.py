@@ -4,18 +4,8 @@ from django.views.generic import ListView, DetailView, CreateView, DeleteView, U
 from .models import *
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
-
 def about(request):
     return render(request, "blog/about.html")
-
-
-def author(request, author_name):
-    author = User.objects.get(username=author_name)
-    if author:
-        return render(request, "blog/author.html", {
-            "author": author
-        })
-    pass
 
 
 class PostListView(ListView):
@@ -79,3 +69,5 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+
