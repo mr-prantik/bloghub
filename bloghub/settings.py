@@ -118,7 +118,7 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-01
+
 LOGIN_REDIRECT_URL = 'blog:blog-home'
 
 LOGIN_URL = 'users:users-login'
