@@ -1,0 +1,5 @@
+.env
+blog/__pycache__/*
+users/__pycache__/*
+bloghub/__pycache__/*
+db.sqlite3
