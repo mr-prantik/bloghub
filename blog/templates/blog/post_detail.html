@@ -1,5 +1,7 @@
 {% extends "blog/layout.html" %} 
-{% block title %} Home {% endblock title %} 
+{% block title %}
+    Home 
+{% endblock title %} 
 {% block body %}
 
 <article class="media content-section">
@@ -9,7 +11,7 @@
   />
   <div class="media-body">
     <div class="article-metadata">
-      <a class="mr-2" href="{% url 'blog:blog-author' post.author.username %}"
+      <a class="mr-2" href="{% url 'blog:user-posts' post.author.username %}"
         >{{ post.author.username }}</a
       >
       <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>

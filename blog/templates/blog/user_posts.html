@@ -1,8 +1,9 @@
 {% extends "blog/layout.html" %}
 {% block title %}
-    Home
+    User Posts
 {% endblock title %}
 {% block body %}
+    <h1>Post By {{view.kwargs.username}} ({{page_obj.paginator.count}})</h1>
     {% for post in posts %}
         <article class="media content-section">
           <img src="{{post.author.profile.image.url}}" class="rounded-circle article-img">
