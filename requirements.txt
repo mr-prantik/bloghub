@@ -3,5 +3,6 @@ Django==4.1.4
 django-crispy-forms==1.14.0
 django-unused-media==0.2.2
 Pillow==9.3.0
+python-decouple==3.7
 six==1.16.0
 sqlparse==0.4.3
