@@ -5,3 +5,4 @@ users/__pycache__/*
 users/migrations/*
 bloghub/__pycache__/*
 db.sqlite3
+media/*
