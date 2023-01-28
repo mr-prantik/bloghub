@@ -3,24 +3,15 @@
 {% block title %}
     Login 
 {% endblock title %} 
-{% block body %} 
+{% block body %}  
 
+<div>
 
-<div class="colour"></div>
-<div class="colour"></div>
-<div class="colour"></div>
-<div class="box">
-  <div class="square" style="--I: 0"></div>
-  <div class="square" style="--I: 1"></div>
-  <div class="square" style="--I: 2"></div>
-  <div class="square" style="--I: 3"></div>
-  <div class="square" style="--I: 4"></div>
-  <div class="container">
-    <div class="form">
+    <div class="form" style="position: absolute; top: 30%; left: 40%;">
       <form action="{% url 'users:users-login' %}" method="post">
         {% csrf_token %}
-        <fieldset class="form-group">
-          <legend class="border-bottom mb4">Login to your bloghub account</legend>
+     
+          <legend>Login to your bloghub account</legend>
           {{ form|crispy }}
         </fieldset>
         <div class="form-group">
@@ -38,7 +29,7 @@
         </small>
       </div>
     </div>
-  </div>
+
 </div>
 
 {% endblock body %}
