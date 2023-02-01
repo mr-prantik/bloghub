@@ -6,3 +6,4 @@ users/migrations/*
 bloghub/__pycache__/*
 db.sqlite3
 media/*
+static/*
