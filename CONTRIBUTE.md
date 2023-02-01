@@ -4,9 +4,9 @@
 
 + Fork this repository
 
-+ Clone the dev branch of repo
++ Clone the repository
   ```
-  git clone --branch dev git@github.com:[YOUR USERNAME]/bloghub.git
+  git clone git@github.com:[YOUR USERNAME]/bloghub.git
   ```
   
 + Install the requirements
@@ -23,6 +23,11 @@
   ```
   ```
   python manage.py migrate --run-syncdb
+  ```
+
++ Collect the static files
+  ```
+  python manage.py collectstatic
   ```
 
 + To run the development server
