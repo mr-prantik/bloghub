@@ -1,9 +1,6 @@
 .env
-blog/__pycache__/*
-blog/migrations/*
-users/__pycache__/*
-users/migrations/*
-bloghub/__pycache__/*
+*/__pycache__/*
+*/migrations/*
 db.sqlite3
 media/*
 static/*
