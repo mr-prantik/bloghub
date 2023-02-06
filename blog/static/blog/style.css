@@ -1,7 +1,8 @@
 body {
-    background-color: #d6d6d6;
+    background-color: #0c0b0b;
     color: #000000;
     margin-top: 5rem;
+    overflow-y: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -42,11 +43,11 @@ body {
   }
   
   .article-title {
-    color: #007209;
+    color: #000000;
   }
   
   a.article-title:hover {
-    color: #34a500;
+    color: #000000;
     text-decoration: none;
   }
   
@@ -111,7 +112,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(0,0,0,0.6);
+    background-color: rgba(255, 0, 0, 0.6);
     position: fixed;
     top: 0;
     /* padding: 25px 35px; */
